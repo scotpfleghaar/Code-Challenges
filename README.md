@@ -64,3 +64,39 @@ function multiplicationTable(row,col){
 }
 
 ```
+## Challenge 3
+### Question
+
+
+Given a number, return a string with dash'-'marks before and after each odd integer, but do not begin or end the string with a dash mark.
+
+Ex:
+
+```javascript
+dashatize(274) -> '2-7-4'
+dashatize(6815) -> '68-1-5'
+```
+
+
+
+### My Solution
+
+```javascript
+function dashatize(num) {
+    if (!isNaN(num)) {
+        num = num > 0 ? num : num *= -1;
+        var output = num.toString().split('');
+        for (var i = 0, j = output.length; i < j; i++) {
+            console.log(i);
+            if (((output[i]) % 2 != 0) && (i != j - 1)) {
+                output[i] = (output[i] + "-");
+            }
+            if (((output[i]) % 2 != 0) && ((output[i - 1]) % 2 == 0)) {
+                output[i] = ("-" + output[i]);
+            }
+        }
+        return output.join('');
+    }
+    return num.toString();
+}
+```
