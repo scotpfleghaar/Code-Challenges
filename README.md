@@ -183,3 +183,179 @@ String.prototype.toJadenCase = function () {
     return a.join(' ');
 };
 ```
+
+## Challenge 7
+### Question
+
+
+You're laying out a rad pixel art mural to paint on your living room wall in homage to Paul Robertson, your favorite pixel artist.
+
+You want your work to be perfect down to the millimeter. You haven't decided on the dimensions of your piece, how large you want your pixels to be, or which wall you want to use. You just know that you want to fit an exact number of pixels.
+
+To help decide those things you've decided to write a function, is_divisible() that will tell you whether a wall of a certain length can exactly fit an integer number of pixels of a certain length.
+
+Your function should take two arguments: the size of the wall in millimeters and the size of a pixel in millimeters. It should return True if you can fit an exact number of pixels on the wall, otherwise it should return False. For example is_divisible(4050, 27) should return True, but is_divisible(4066, 27) should return False.
+
+Note: you don't need to use an if statement here. Remember that in Python an expression using the == comparison operator will evaluate to either True or False:
+
+```
+>>> def equals_three(num):
+>>>     return num == 3
+>>> equals_three(5)
+False
+>>> equals_three(3)
+True
+```
+
+### My Solution
+
+```javascript
+function isDivisible(wallLength, pixelSize){
+  return wallLength % pixelSize == 0 ? true : false;
+}
+```
+
+## Challenge 8
+### Question
+
+
+It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, except in C, where, to keep the difficulty at the level of the kata, you are given two parameters, the first a buffer with length exactly the same as the second parameter, the original string. You don't have to worry with strings with less than two characters.
+
+### My Solution
+
+```javascript
+removeChar = (str) => {
+    str = str.slice(0);
+    str = str.slice(1, (str.length - 1));
+    return str;
+};
+```
+
+## Challenge 9
+### Question
+To find the volume (centimeters cubed) of a cuboid you use the formula:
+
+`volume = Length * Width * Height`
+
+But someone forgot to use proper record keeping, so we only have the volume, and the length of a single side!
+
+It's up to you to find out whether the cuboid has equal sides (= is a cube).
+
+Return true if the cuboid could have equal sides, return false otherwise.
+
+Return false for invalid numbers too (e.g volume or side is less than or equal to 0).
+
+Note: the sides must be integers
+
+### My Solution
+
+```javascript
+var cubeChecker = function (volume, side) {
+    return (volume === (side * side * side) && (volume > 0)) ? true : false;
+};
+
+```
+## Challenge 10
+### Question
+Create a function that converts US dollars (USD) to Chinese Yuan (CNY) . The input is the amount of USD as an integer, and the output should be a string that states the amount of Yuan followed by 'Chinese Yuan'
+
+For Example:
+
+```
+  usdcny(15) // => '101.25 Chinese Yuan'
+  usdcny(465) // => '3138.75 Chinese Yuan'
+```
+The conversion rate you should use is 6.75 CNY for every 1 USD. All numbers shold be reounded to the nearest hundreth (e.g. 21.00 NOT 21.0 or 21) (HINT: google toFixed)
+
+### My Solution
+
+```javascript
+function usdcny(usd) {
+    return (usd * 6.75).toFixed(2) + " Chinese Yuan";
+}
+
+```
+## Challenge 11
+### Question
+You are given two angles (in degrees) of a triangle.
+
+Write a function to return the 3rd.
+
+Note: only positive integers will be tested.
+
+### My Solution
+
+```javascript
+otherAngle = (a, b) => {
+    return (180 - (a + b));
+};
+
+```
+## Challenge 12
+### Question
+Get the number n to return the reversed sequence from n to 1.
+
+Example : n=5 >> [5,4,3,2,1]
+
+### My Solution
+
+```javascript
+const reverseSeq = n => {
+    var AArray = [];
+    for (var i = n; i > 0; i--) {
+        let j = i;
+        BArray = AArray.push(j);
+    }
+    return AArray;
+};
+
+```
+## Challenge 13
+### Question
+The aspect ratio of an image describes the proportional relationship between its width and its height. Most video shown on the internet uses a 16:9 aspect ratio, which means that for every pixel in the Y, there are roughly 1.77 pixels in the X (where 1.77 ~= 16/9). As an example, 1080p video with an aspect ratio of 16:9 would have an X resolution of 1920, however 1080p video with an aspect ratio of 4:3 would have an X resolution of 1440.
+
+Write a function that accepts arbitrary X and Y resolutions and converts them into resolutions with a 16:9 aspect ratio that maintain equal height. Round your answers up to the nearest integer.
+
+### My Solution
+
+```javascript
+aspectRatio = (x, y) => {
+    return [Math.ceil(y * 1.77777), y];
+}
+
+```
+## Challenge 14
+### Question
+You will be given an array (a) and a value (x). All you need to do is check whether the provided array contains the value.
+
+Array can contain numbers or strings. X can be either. Return true if the array contains the value, false if not.
+
+### My Solution
+
+```javascript
+check = (a, x) => {
+    return a.includes(x);
+}
+
+```
+## Challenge 15
+### Question
+Given a non-negative integer `n`, write a function `toBinary/ToBinary` which returns that number in a binary format.
+
+### My Solution
+
+```javascript
+toBinary = (n) => {
+    return parseInt(((n >>> 0).toString(2)));
+}
+
+
+```
+## Challenge 16
+### Question
+
+### My Solution
+
+```javascript
+
+```
